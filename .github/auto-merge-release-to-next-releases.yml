@@ -1,0 +1,15 @@
+name: Auto-merge releas branches
+on: 
+  push:
+    branches:
+      - release-*
+jobs:
+  auto-merge-release-to-next-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v1
+      - name: Auto-merge
+        uses: sergeevichvn/gh-action-nightly-merge@v1.3.2-beta-32
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
