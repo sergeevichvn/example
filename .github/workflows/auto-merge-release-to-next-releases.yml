@@ -16,6 +16,6 @@ jobs:
       - uses: yanzay/notify-telegram@v0.1.0
         if: failure()
         with:
-          chat: ${{ env.auto-merge.telegram-bot.token.TELEGRAM_TEST_CHAT_ID }} # user id or channel name secret
-          token: ${{ env.auto-merge.telegram-bot.token.AUTO_MERGE_TELEGRAM_BOT_TOKEN }} # token secret
+          chat: ${{ auto-merge.telegram-bot.token.TELEGRAM_TEST_CHAT_ID }} # user id or channel name secret
+          token: ${{ auto-merge.telegram-bot.token.AUTO_MERGE_TELEGRAM_BOT_TOKEN }} # token secret
           status: ${{ job.status }} # do not modify this line
