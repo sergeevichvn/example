@@ -15,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: send custom message with args
         if: failure()
-        uses: appleboy/telegram-action@master
+        uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_TEST_CHAT_ID }}
           token: ${{ secrets.AUTO_MERGE_TELEGRAM_BOT_TOKEN }}
