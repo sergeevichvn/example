@@ -20,4 +20,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            🥺 ${{ github.repository }} Fail while auto-merge PR of ${{ github.actor }} in another release branches. 
+            🥺 FAIL
+            🎯 ${{ github.repository }} 
+            💻 ${{ github.actor }}
