@@ -13,9 +13,10 @@ jobs:
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.2-beta-36
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: yanzay/notify-telegram@v0.1.0
+      - name: send custom message with args
         if: failure()
+        uses: appleboy/telegram-action@v0.1.1
         with:
-          chat: ${{ env.auto-merge.telegram-bot.token.TELEGRAM_TEST_CHAT_ID }} # user id or channel name secret
-          token: ${{ env.auto-merge.telegram-bot.token.AUTO_MERGE_TELEGRAM_BOT_TOKEN }} # token secret
-          status: ${{ job.status }} # do not modify this line
+          to: ${{ secrets.TELEGRAM_TOKEN }}
+          token: ${{ secrets.TELEGRAM_CHAT_ID }}
+          message: The ${{ github.event_name }} event triggered first step.
