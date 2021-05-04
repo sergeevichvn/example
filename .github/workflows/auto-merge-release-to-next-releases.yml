@@ -12,9 +12,9 @@ jobs:
       - name: Auto-merge
         uses: sergeevichvn/gh-action-nightly-merge@v1.3.2-beta-36
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
       - name: send custom message with args
-        if: failure()
+        if: cancelled() #CHANGE_ME !!!
         uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
