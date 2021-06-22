@@ -2,7 +2,7 @@ name: Auto-merge releas to next releases
 on: 
   push:
     branches:
-      - 'release-*.*.*'
+      - 'release-*'
 jobs:
   auto-merge-rc-job:
     if: github.event.pull_request.merged == 'true'
